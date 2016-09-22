@@ -1,0 +1,30 @@
+#!/bin/bash
+#-*-coding:utf8:-*-
+#author:zwb
+#python
+# 第一种方法 n空间 
+def quickSort(GivenList):
+	if len(GivenList)<2:
+		return GivenList
+	return quickSort([x for x in GivenList if x<GivenList[0]])+GivenList[0]+quickSort([y for y in GivenList if y>GivenList[0]])
+# 第二种方法   原地排序
+def qSort(GivenL):
+	if len(GivenL)<2:
+		return GivenL
+	length=len(GivenL)
+	i,j=0,length-1
+	key=GivenL[0]
+	while i<j:
+		while i<j:
+			if GivenL[j]<Given[i]:
+				GivenL[j],GivenL[i]=GivenL[i],Given[j]
+				j-=1
+				i+=1
+				break
+		while i<j:
+			if GivenL[i]>Given[j]:
+				GivenL[i],GivenL[j]=GivenL[j],GivenL[i]
+				i+=1
+				j-=1
+				break
+	return GivenL
